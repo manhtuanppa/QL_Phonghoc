@@ -1,0 +1,72 @@
+﻿@model IEnumerable<QL_Phonghoc.Models.ClsThietBiBaoHong>
+
+@{
+    ViewBag.Title = "Danh sách báo hỏng";
+}
+
+<h2>Danh sách báo hỏng</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTaBaoHong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NguoiBao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XacNhan)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTTB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTaBaoHong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NguoiBao)
+            </td>
+            <td>
+                @if (item.XacNhan == 0)
+                {
+                    <p style="color:red"> Chưa xác nhận</p>
+                }
+                else
+                {
+                    <p style="color:#097e09"> Đã xác nhận</p>
+                }
+            </td>
+            <td>
+                @if (item.XacNhan == 0)
+                {
+                    @Html.ActionLink("Xác nhận |", "XacNhanHong", new { id = item.ID })                
+                }
+                @if (item.XacNhan == 1)
+                {
+                    @Html.ActionLink("Đã sửa |", "XacNhanHong", new { id = item.ID })
+                }
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

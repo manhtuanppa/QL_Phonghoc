@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QL_Phonghoc.Models.tbLop_Phong>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBanGiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbLop.TenLop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbPhongHoc.TenPhong)
+        </th>
+        <th>
+            Tòa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBanGiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbLop.TenLop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbPhongHoc.TenPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbPhongHoc.Toa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

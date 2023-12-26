@@ -1,0 +1,57 @@
+﻿@model QL_Phonghoc.Models.tbBaoHongTB
+
+@{
+    ViewBag.Title = "Xác nhận thiết bị hỏng";
+}
+
+<h4> Xác nhận thông tin báo hỏng </h4>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.IDTB)
+    <div class="form-horizontal">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NgayBao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tbThietbi.TenTTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbThietbi.TenTTB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaBaoHong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaBaoHong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiBao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiBao)
+        </dd>
+
+    </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            <input type="submit" value="Xác định" class="btn btn-primary" />
+        </div>
+    </div>
+
+</div>
+}
+<p>
+    @Html.ActionLink("Back to List", "DanhSachBaoHong")
+</p>

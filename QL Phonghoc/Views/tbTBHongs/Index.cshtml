@@ -1,0 +1,81 @@
+﻿@model IEnumerable<QL_Phonghoc.Models.tbTBHong>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTaBaoHong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongBao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongHong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongSua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbThietbi.TenTTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbUser.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTaBaoHong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongBao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongHong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongSua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbThietbi.TenTTB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbUser.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

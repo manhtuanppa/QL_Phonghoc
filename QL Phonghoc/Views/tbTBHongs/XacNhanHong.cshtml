@@ -1,0 +1,80 @@
+﻿@model QL_Phonghoc.Models.tbTBHong
+
+@{
+    ViewBag.Title = "Xác nhận hỏng";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>tbTBHong</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.IDNguoiBao)
+        @Html.HiddenFor(model => model.IDTB)
+
+        <div disabled class="form-group">
+            @Html.Label("Tên thiết bị", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">             
+                <input disabled style="color: #555" class="form-control text-box single-line" id="tbThietbi_TenTTB" name="tbThietbi.TenTTB" type="text" value="@Model.tbThietbi.TenTTB">
+                @Html.ValidationMessageFor(model => model.IDTB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayBao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input disabled style="color: #555" class="form-control text-box single-line disabled" id="tbThietbi_TenTTB" name="tbThietbi.TenTTB" type="text" value=@Model.NgayBao>
+                @Html.ValidationMessageFor(model => model.NgayBao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNguoiBao, "IDNguoiBao", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input disabled style="color: #555" class="form-control text-box single-line" id="tbThietbi_TenTTB" name="tbThietbi.TenTTB" type="text" value=@Model.tbUser.UserName>
+                @Html.ValidationMessageFor(model => model.IDNguoiBao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoLuongBao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input disabled style="color: #555" class="form-control text-box single-line" id="tbThietbi_TenTTB" name="tbThietbi.TenTTB" type="text" value=@Model.SoLuongBao>
+                @Html.ValidationMessageFor(model => model.SoLuongBao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group has-warning">
+            @Html.Label("Mô tả hỏng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MoTaBaoHong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTaBaoHong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group has-warning">
+            @Html.LabelFor(model => model.SoLuongHong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoLuongHong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoLuongHong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Xác nhận" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

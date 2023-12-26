@@ -1,0 +1,92 @@
+﻿@model IEnumerable<QL_Phonghoc.Models.tbLich_Hoc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Xem lịch học</h2>
+
+@using (Html.BeginForm("XemLichHoc", "tbLich_Hoc", FormMethod.Get)) // -- phần thay đổi
+{
+    <div class="form-horizontal">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="control-label col-md-3">Chọn ngày: </label>
+                <div class="col-md-3">
+                   
+                    <input class = "form-control input-sm" name="ngay" value=@ViewBag.ngay /> 
+                    <input class="form-control input-sm" name="thang" value=@ViewBag.thang />
+                    <input class="form-control input-sm" name="nam" value=@ViewBag.nam />
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Tìm" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+<table class="table table-bordered table-hover table-responsive">
+    <tr>
+        <th>
+            Buổi
+        </th>
+        <th>
+            Lớp
+        </th>
+        <th>
+            Địa điểm học
+        </th>
+        <th>
+            Môn học
+        </th>
+        <th>
+            Giáo viên
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTiet)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (item.Buoi == 1)
+            {
+                <td style="color: #5cb85c">
+                    <b>S</b>
+                </td>
+            }
+            @if (item.Buoi == 2)
+            {
+                <td style="color:#2b6ea7; ">
+                   <b>C</b> 
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.tbLop.TenLop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbPhongHoc.TenPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbMonHoc.KiHieuMH) - @Html.DisplayFor(modelItem => item.tbMonHoc.TenMH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaoVien)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTiet)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model QL_Phonghoc.Models.tbThietbi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Thông tin thiết bị</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbLoaiTB.TenLoaiTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbLoaiTB.TenLoaiTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbPhongHoc.TenPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbPhongHoc.TenPhong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

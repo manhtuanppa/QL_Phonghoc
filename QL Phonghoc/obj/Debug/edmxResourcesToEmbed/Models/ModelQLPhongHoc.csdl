@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongHocModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbHeDT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHeDT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbLops" Relationship="Self.FK_Lop_HeDT" FromRole="tbHeDT" ToRole="tbLop" />
+    <NavigationProperty Name="tbPhanBoes" Relationship="Self.FK_Pb_HĐT" FromRole="tbHeDT" ToRole="tbPhanBo" />
+  </EntityType>
+  <EntityType Name="tbHocKy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBD" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NgayKT" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IDLop" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHocKy_Mon" Relationship="Self.FK_HocKy_Mon" FromRole="tbHocKy" ToRole="tbHocKy_Mon" />
+    <NavigationProperty Name="tbLich_Hoc" Relationship="Self.FK_Lich_HocKy" FromRole="tbHocKy" ToRole="tbLich_Hoc" />
+    <NavigationProperty Name="tbLop" Relationship="Self.FK_Lop2_HocKy" FromRole="tbHocKy" ToRole="tbLop" />
+  </EntityType>
+  <EntityType Name="tbHocKy_Mon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDHocKy" Type="Int32" Nullable="false" />
+    <Property Name="IDMonHoc" Type="Int32" Nullable="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbHocKy" Relationship="Self.FK_HocKy_Mon" FromRole="tbHocKy_Mon" ToRole="tbHocKy" />
+    <NavigationProperty Name="tbMonHoc" Relationship="Self.FK_HocKy_Mon1" FromRole="tbHocKy_Mon" ToRole="tbMonHoc" />
+  </EntityType>
+  <EntityType Name="tbKhoa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKhoa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="KiHieuKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbMonHocs" Relationship="Self.FK_Mon_Khoa" FromRole="tbKhoa" ToRole="tbMonHoc" />
+  </EntityType>
+  <EntityType Name="tbLich_Hoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDLop" Type="Int32" Nullable="false" />
+    <Property Name="IDPhongHoc" Type="Int32" Nullable="false" />
+    <Property Name="IDMon" Type="Int32" Nullable="false" />
+    <Property Name="GiaoVien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GiaoVienThucTe" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Buoi" Type="Int32" Nullable="false" />
+    <Property Name="SoTiet" Type="Int32" />
+    <Property Name="TietBD" Type="Int32" />
+    <Property Name="IDHocKy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHocKy" Relationship="Self.FK_Lich_HocKy" FromRole="tbLich_Hoc" ToRole="tbHocKy" />
+    <NavigationProperty Name="tbLop" Relationship="Self.FK_Lich_Lop" FromRole="tbLich_Hoc" ToRole="tbLop" />
+    <NavigationProperty Name="tbMonHoc" Relationship="Self.FK_Lich_Mon" FromRole="tbLich_Hoc" ToRole="tbMonHoc" />
+    <NavigationProperty Name="tbPhongHoc" Relationship="Self.FK_Lich_Phong" FromRole="tbLich_Hoc" ToRole="tbPhongHoc" />
+  </EntityType>
+  <EntityType Name="tbLoaiTB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiTB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbThietbis" Relationship="Self.FK_TB_LoaiTB" FromRole="tbLoaiTB" ToRole="tbThietbi" />
+  </EntityType>
+  <EntityType Name="tbLop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLop" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="KhoaHoc" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="GVCN" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="GVTD" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="NienKhoa" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IDHeDT" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHeDT" Relationship="Self.FK_Lop_HeDT" FromRole="tbLop" ToRole="tbHeDT" />
+    <NavigationProperty Name="tbHocKies" Relationship="Self.FK_Lop2_HocKy" FromRole="tbLop" ToRole="tbHocKy" />
+    <NavigationProperty Name="tbLich_Hoc" Relationship="Self.FK_Lich_Lop" FromRole="tbLop" ToRole="tbLich_Hoc" />
+    <NavigationProperty Name="tbLop_Phong" Relationship="Self.FK_Lop2_Phong" FromRole="tbLop" ToRole="tbLop_Phong" />
+  </EntityType>
+  <EntityType Name="tbLop_Phong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDLop" Type="Int32" Nullable="false" />
+    <Property Name="IDPhongHoc" Type="Int32" Nullable="false" />
+    <Property Name="NgayBanGiao" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbLop" Relationship="Self.FK_Lop2_Phong" FromRole="tbLop_Phong" ToRole="tbLop" />
+    <NavigationProperty Name="tbPhongHoc" Relationship="Self.FK_Lop_Phong" FromRole="tbLop_Phong" ToRole="tbPhongHoc" />
+  </EntityType>
+  <EntityType Name="tbMonHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="KiHieuMH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SoTiet" Type="Int32" Nullable="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IDKhoa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHocKy_Mon" Relationship="Self.FK_HocKy_Mon1" FromRole="tbMonHoc" ToRole="tbHocKy_Mon" />
+    <NavigationProperty Name="tbKhoa" Relationship="Self.FK_Mon_Khoa" FromRole="tbMonHoc" ToRole="tbKhoa" />
+    <NavigationProperty Name="tbLich_Hoc" Relationship="Self.FK_Lich_Mon" FromRole="tbMonHoc" ToRole="tbLich_Hoc" />
+    <NavigationProperty Name="tbPhanBoes" Relationship="Self.FK_Pb_Mon" FromRole="tbMonHoc" ToRole="tbPhanBo" />
+  </EntityType>
+  <EntityType Name="tbPhanBo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDHeDT" Type="Int32" Nullable="false" />
+    <Property Name="HocKy" Type="Int32" Nullable="false" />
+    <Property Name="IDMon" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHeDT" Relationship="Self.FK_Pb_HĐT" FromRole="tbPhanBo" ToRole="tbHeDT" />
+    <NavigationProperty Name="tbMonHoc" Relationship="Self.FK_Pb_Mon" FromRole="tbPhanBo" ToRole="tbMonHoc" />
+  </EntityType>
+  <EntityType Name="tbPhongHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Toa" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CoSo" Type="Int32" Nullable="false" />
+    <Property Name="DienTich" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbLich_Hoc" Relationship="Self.FK_Lich_Phong" FromRole="tbPhongHoc" ToRole="tbLich_Hoc" />
+    <NavigationProperty Name="tbLop_Phong" Relationship="Self.FK_Lop_Phong" FromRole="tbPhongHoc" ToRole="tbLop_Phong" />
+    <NavigationProperty Name="tbThietbis" Relationship="Self.FK_TB_Phong" FromRole="tbPhongHoc" ToRole="tbThietbi" />
+  </EntityType>
+  <EntityType Name="tbTBHong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTB" Type="Int32" Nullable="false" />
+    <Property Name="MoTaBaoHong" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IDNguoiBao" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongBao" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongHong" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongSua" Type="Int32" Nullable="false" />
+    <Property Name="NgaySua" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="tbThietbi" Relationship="Self.FK_BH_TB" FromRole="tbTBHong" ToRole="tbThietbi" />
+    <NavigationProperty Name="tbUser" Relationship="Self.FK_BH_Users" FromRole="tbTBHong" ToRole="tbUsers" />
+  </EntityType>
+  <EntityType Name="tbThietbi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTTB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="IDLoaiTB" Type="Int32" Nullable="false" />
+    <Property Name="IDPhongHoc" Type="Int32" Nullable="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbLoaiTB" Relationship="Self.FK_TB_LoaiTB" FromRole="tbThietbi" ToRole="tbLoaiTB" />
+    <NavigationProperty Name="tbPhongHoc" Relationship="Self.FK_TB_Phong" FromRole="tbThietbi" ToRole="tbPhongHoc" />
+    <NavigationProperty Name="tbTBHongs" Relationship="Self.FK_BH_TB" FromRole="tbThietbi" ToRole="tbTBHong" />
+  </EntityType>
+  <EntityType Name="tbUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Group" Type="Int32" Nullable="false" />
+    <Property Name="Office" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbTBHongs" Relationship="Self.FK_BH_Users" FromRole="tbUsers" ToRole="tbTBHong" />
+  </EntityType>
+  <Association Name="FK_Lop_HeDT">
+    <End Role="tbHeDT" Type="Self.tbHeDT" Multiplicity="1" />
+    <End Role="tbLop" Type="Self.tbLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHeDT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLop">
+        <PropertyRef Name="IDHeDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pb_HĐT">
+    <End Role="tbHeDT" Type="Self.tbHeDT" Multiplicity="1" />
+    <End Role="tbPhanBo" Type="Self.tbPhanBo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHeDT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbPhanBo">
+        <PropertyRef Name="IDHeDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HocKy_Mon">
+    <End Role="tbHocKy" Type="Self.tbHocKy" Multiplicity="1" />
+    <End Role="tbHocKy_Mon" Type="Self.tbHocKy_Mon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHocKy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbHocKy_Mon">
+        <PropertyRef Name="IDHocKy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lich_HocKy">
+    <End Role="tbHocKy" Type="Self.tbHocKy" Multiplicity="1" />
+    <End Role="tbLich_Hoc" Type="Self.tbLich_Hoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHocKy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLich_Hoc">
+        <PropertyRef Name="IDLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lop2_HocKy">
+    <End Role="tbLop" Type="Self.tbLop" Multiplicity="1" />
+    <End Role="tbHocKy" Type="Self.tbHocKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbHocKy">
+        <PropertyRef Name="IDLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HocKy_Mon1">
+    <End Role="tbMonHoc" Type="Self.tbMonHoc" Multiplicity="1" />
+    <End Role="tbHocKy_Mon" Type="Self.tbHocKy_Mon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMonHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbHocKy_Mon">
+        <PropertyRef Name="IDMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mon_Khoa">
+    <End Role="tbKhoa" Type="Self.tbKhoa" Multiplicity="1" />
+    <End Role="tbMonHoc" Type="Self.tbMonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhoa">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbMonHoc">
+        <PropertyRef Name="IDKhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lich_Lop">
+    <End Role="tbLop" Type="Self.tbLop" Multiplicity="1" />
+    <End Role="tbLich_Hoc" Type="Self.tbLich_Hoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLich_Hoc">
+        <PropertyRef Name="IDLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lich_Mon">
+    <End Role="tbMonHoc" Type="Self.tbMonHoc" Multiplicity="1" />
+    <End Role="tbLich_Hoc" Type="Self.tbLich_Hoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMonHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLich_Hoc">
+        <PropertyRef Name="IDMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lich_Phong">
+    <End Role="tbPhongHoc" Type="Self.tbPhongHoc" Multiplicity="1" />
+    <End Role="tbLich_Hoc" Type="Self.tbLich_Hoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPhongHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLich_Hoc">
+        <PropertyRef Name="IDPhongHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_LoaiTB">
+    <End Role="tbLoaiTB" Type="Self.tbLoaiTB" Multiplicity="1" />
+    <End Role="tbThietbi" Type="Self.tbThietbi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoaiTB">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbThietbi">
+        <PropertyRef Name="IDLoaiTB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lop2_Phong">
+    <End Role="tbLop" Type="Self.tbLop" Multiplicity="1" />
+    <End Role="tbLop_Phong" Type="Self.tbLop_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLop_Phong">
+        <PropertyRef Name="IDLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lop_Phong">
+    <End Role="tbPhongHoc" Type="Self.tbPhongHoc" Multiplicity="1" />
+    <End Role="tbLop_Phong" Type="Self.tbLop_Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPhongHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbLop_Phong">
+        <PropertyRef Name="IDPhongHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pb_Mon">
+    <End Role="tbMonHoc" Type="Self.tbMonHoc" Multiplicity="1" />
+    <End Role="tbPhanBo" Type="Self.tbPhanBo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMonHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbPhanBo">
+        <PropertyRef Name="IDMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Phong">
+    <End Role="tbPhongHoc" Type="Self.tbPhongHoc" Multiplicity="1" />
+    <End Role="tbThietbi" Type="Self.tbThietbi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPhongHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbThietbi">
+        <PropertyRef Name="IDPhongHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BH_TB">
+    <End Role="tbThietbi" Type="Self.tbThietbi" Multiplicity="1" />
+    <End Role="tbTBHong" Type="Self.tbTBHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbThietbi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbTBHong">
+        <PropertyRef Name="IDTB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BH_Users">
+    <End Role="tbUsers" Type="Self.tbUser" Multiplicity="1" />
+    <End Role="tbTBHong" Type="Self.tbTBHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbTBHong">
+        <PropertyRef Name="IDNguoiBao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhongHocEntities6" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbHeDTs" EntityType="Self.tbHeDT" />
+    <EntitySet Name="tbHocKies" EntityType="Self.tbHocKy" />
+    <EntitySet Name="tbHocKy_Mon" EntityType="Self.tbHocKy_Mon" />
+    <EntitySet Name="tbKhoas" EntityType="Self.tbKhoa" />
+    <EntitySet Name="tbLich_Hoc" EntityType="Self.tbLich_Hoc" />
+    <EntitySet Name="tbLoaiTBs" EntityType="Self.tbLoaiTB" />
+    <EntitySet Name="tbLops" EntityType="Self.tbLop" />
+    <EntitySet Name="tbLop_Phong" EntityType="Self.tbLop_Phong" />
+    <EntitySet Name="tbMonHocs" EntityType="Self.tbMonHoc" />
+    <EntitySet Name="tbPhanBoes" EntityType="Self.tbPhanBo" />
+    <EntitySet Name="tbPhongHocs" EntityType="Self.tbPhongHoc" />
+    <EntitySet Name="tbTBHongs" EntityType="Self.tbTBHong" />
+    <EntitySet Name="tbThietbis" EntityType="Self.tbThietbi" />
+    <EntitySet Name="tbUsers" EntityType="Self.tbUser" />
+    <AssociationSet Name="FK_Lop_HeDT" Association="Self.FK_Lop_HeDT">
+      <End Role="tbHeDT" EntitySet="tbHeDTs" />
+      <End Role="tbLop" EntitySet="tbLops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pb_HĐT" Association="Self.FK_Pb_HĐT">
+      <End Role="tbHeDT" EntitySet="tbHeDTs" />
+      <End Role="tbPhanBo" EntitySet="tbPhanBoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HocKy_Mon" Association="Self.FK_HocKy_Mon">
+      <End Role="tbHocKy" EntitySet="tbHocKies" />
+      <End Role="tbHocKy_Mon" EntitySet="tbHocKy_Mon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lich_HocKy" Association="Self.FK_Lich_HocKy">
+      <End Role="tbHocKy" EntitySet="tbHocKies" />
+      <End Role="tbLich_Hoc" EntitySet="tbLich_Hoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lop2_HocKy" Association="Self.FK_Lop2_HocKy">
+      <End Role="tbLop" EntitySet="tbLops" />
+      <End Role="tbHocKy" EntitySet="tbHocKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HocKy_Mon1" Association="Self.FK_HocKy_Mon1">
+      <End Role="tbMonHoc" EntitySet="tbMonHocs" />
+      <End Role="tbHocKy_Mon" EntitySet="tbHocKy_Mon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mon_Khoa" Association="Self.FK_Mon_Khoa">
+      <End Role="tbKhoa" EntitySet="tbKhoas" />
+      <End Role="tbMonHoc" EntitySet="tbMonHocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lich_Lop" Association="Self.FK_Lich_Lop">
+      <End Role="tbLop" EntitySet="tbLops" />
+      <End Role="tbLich_Hoc" EntitySet="tbLich_Hoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lich_Mon" Association="Self.FK_Lich_Mon">
+      <End Role="tbMonHoc" EntitySet="tbMonHocs" />
+      <End Role="tbLich_Hoc" EntitySet="tbLich_Hoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lich_Phong" Association="Self.FK_Lich_Phong">
+      <End Role="tbPhongHoc" EntitySet="tbPhongHocs" />
+      <End Role="tbLich_Hoc" EntitySet="tbLich_Hoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_LoaiTB" Association="Self.FK_TB_LoaiTB">
+      <End Role="tbLoaiTB" EntitySet="tbLoaiTBs" />
+      <End Role="tbThietbi" EntitySet="tbThietbis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lop2_Phong" Association="Self.FK_Lop2_Phong">
+      <End Role="tbLop" EntitySet="tbLops" />
+      <End Role="tbLop_Phong" EntitySet="tbLop_Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lop_Phong" Association="Self.FK_Lop_Phong">
+      <End Role="tbPhongHoc" EntitySet="tbPhongHocs" />
+      <End Role="tbLop_Phong" EntitySet="tbLop_Phong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pb_Mon" Association="Self.FK_Pb_Mon">
+      <End Role="tbMonHoc" EntitySet="tbMonHocs" />
+      <End Role="tbPhanBo" EntitySet="tbPhanBoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Phong" Association="Self.FK_TB_Phong">
+      <End Role="tbPhongHoc" EntitySet="tbPhongHocs" />
+      <End Role="tbThietbi" EntitySet="tbThietbis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BH_TB" Association="Self.FK_BH_TB">
+      <End Role="tbThietbi" EntitySet="tbThietbis" />
+      <End Role="tbTBHong" EntitySet="tbTBHongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BH_Users" Association="Self.FK_BH_Users">
+      <End Role="tbUsers" EntitySet="tbUsers" />
+      <End Role="tbTBHong" EntitySet="tbTBHongs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

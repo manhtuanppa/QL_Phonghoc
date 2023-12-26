@@ -1,0 +1,64 @@
+﻿@using System.Threading;
+@model IEnumerable<QL_Phonghoc.Models.ClsThietBiBaoHong>
+
+@{
+    ViewBag.Title = "Danh sách thiết bị hỏng";
+}
+
+
+<h2>Danh sách thiết bị hỏng</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhongHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTaBaoHong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongHong)
+        </th>
+        <th>
+            Ngày xác nhận
+        </th>
+        <th>
+            Người xác nhận
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhongHoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTTB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTaBaoHong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongHong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NguoiBao)
+            </td>
+            <td>
+@if (Thread.CurrentPrincipal.IsInRole("CanBo"))
+{
+                @Html.ActionLink("Đã sửa |", "XacNhanHong", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+}
+            </td>
+        </tr>
+    }
+
+</table>

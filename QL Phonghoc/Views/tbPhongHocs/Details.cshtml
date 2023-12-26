@@ -1,0 +1,66 @@
+﻿@model QL_Phonghoc.Models.tbPhongHoc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbPhongHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoSo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoSo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienTich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienTich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

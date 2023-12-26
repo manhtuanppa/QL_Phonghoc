@@ -1,0 +1,84 @@
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\ApplicationInsights.config
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\csc.exe
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\System.Collections.Immutable.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\System.Reflection.Metadata.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\vbc.exe
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\VBCSCompiler.exe
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\roslyn\VBCSCompiler.exe.config
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\QL Phonghoc.dll.config
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\QL Phonghoc.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\QL Phonghoc.pdb
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Antlr3.Runtime.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\EntityFramework.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\EntityFramework.SqlServer.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.DependencyCollector.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.Web.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.WindowsServer.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.ApplicationInsights.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Google.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Web.Infrastructure.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Newtonsoft.Json.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Owin.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Helpers.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Mvc.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Optimization.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Razor.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.Deployment.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.Razor.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\WebGrease.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.DependencyCollector.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.Web.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AI.WindowsServer.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.ApplicationInsights.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Helpers.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Mvc.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Optimization.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.Razor.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.Deployment.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\System.Web.WebPages.Razor.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Antlr3.Runtime.pdb
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Newtonsoft.Json.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\EntityFramework.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\EntityFramework.SqlServer.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Google.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\obj\Debug\QL Phonghoc.dll
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\obj\Debug\QL Phonghoc.pdb
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\obj\Debug\QL Phonghoc.csproj.AssemblyReference.cache
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\obj\Debug\QL Phonghoc.csproj.CoreCompileInputs.cache
+D:\ASP MVC\QL Phong hoc\QL Phonghoc\QL Phonghoc\obj\Debug\QL Phonghoc.csproj.CopyComplete

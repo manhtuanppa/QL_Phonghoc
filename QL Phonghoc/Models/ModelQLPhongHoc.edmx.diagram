@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b31aecae52ea4a1f97df3fc57f6c9e76" Name="Diagram1">
+        <EntityTypeShape EntityType="QLPhongHocModel.tbHeDT" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbHocKy" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbHocKy_Mon" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbKhoa" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbLich_Hoc" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbLoaiTB" Width="1.5" PointX="9" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbLop" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbLop_Phong" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbMonHoc" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbPhanBo" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbPhongHoc" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbTBHong" Width="1.5" PointX="13.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbThietbi" Width="1.5" PointX="11.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongHocModel.tbUser" Width="1.5" PointX="11.25" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lop_HeDT" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Pb_HĐT" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_HocKy_Mon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lich_HocKy" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lop2_HocKy" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_HocKy_Mon1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Mon_Khoa" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lich_Lop" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lich_Mon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lich_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_TB_LoaiTB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lop2_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Lop_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_Pb_Mon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_TB_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_BH_TB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongHocModel.FK_BH_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,81 @@
+﻿@using System.Threading;
+@model IEnumerable<QL_Phonghoc.Models.ClsThietBiBaoHong>
+
+@{
+    ViewBag.Title = "Lịch sử sửa chữa";
+}
+
+
+<h2>Lịch sử sửa chữa thiết bị tại phòng học @ViewBag.TenPhong</h2>
+
+@using (Html.BeginForm("LichSuSuaChua", "tbTBHongs", FormMethod.Get)) // -- phần thay đổi
+{
+    <div class="form-horizontal">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="control-label col-md-3">Chọn phòng học: </label>
+                <div class="col-md-3">
+                    @Html.DropDownList("IDPhongHoc", (IEnumerable<SelectListItem>)ViewBag.IDPhongHoc, htmlAttributes: new { @class = " form-control input-sm" })
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Lọc" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhongHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTTB)
+        </th>
+        <th>
+            Chi tiết sửa chữa
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongSua)
+        </th>
+        <th>
+            Ngày sửa chữa
+        </th>
+        <th>
+            Người xác nhận
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhongHoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTTB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTaBaoHong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongSua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NguoiBao)
+            </td>
+@if (Thread.CurrentPrincipal.IsInRole("CanBo"))
+{
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+}
+        </tr>
+    }
+
+</table>

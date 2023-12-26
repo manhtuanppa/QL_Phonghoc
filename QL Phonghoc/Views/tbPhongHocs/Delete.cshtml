@@ -1,0 +1,72 @@
+﻿@model QL_Phonghoc.Models.tbPhongHoc
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbPhongHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoSo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoSo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienTich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienTich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

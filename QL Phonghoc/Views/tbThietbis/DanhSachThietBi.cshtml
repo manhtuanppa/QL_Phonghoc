@@ -1,0 +1,71 @@
+﻿@using System.Threading;
+@model IEnumerable<QL_Phonghoc.Models.ClsThietBi>
+
+@{
+    ViewBag.Title = "Danh Sách thiết bị";
+}
+
+<h2>Danh sách thiết bị phòng @ViewBag.TenPhong</h2>
+
+@using (Html.BeginForm("DanhSachThietBi", "tbThietBis", FormMethod.Get)) // -- phần thay đổi
+{
+    <div class="form-horizontal">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="control-label col-md-3">Chọn phòng học: </label>
+                <div class="col-md-3">
+                    @Html.DropDownList("IDPhongHoc", (IEnumerable<SelectListItem>)ViewBag.IDPhongHoc, htmlAttributes: new { @class = " form-control input-sm" })
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Lọc" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTTB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChu)
+            </td>
+            <td style="color:red">
+                @Html.Raw(item.TinhTrang)
+            </td>
+            <td>
+@if (Thread.CurrentPrincipal.IsInRole("CanBo"))
+{
+                @Html.ActionLink("Edit |", "Edit", new { id = item.ID }) 
+                @Html.ActionLink("Details |", "Details", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+}
+            </td>
+        </tr>
+    }
+
+</table>
